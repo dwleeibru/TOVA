@@ -152,7 +152,7 @@ gatherUsageStats = true
 # This is used to: - Set the correct URL for CORS and XSRF protection purposes. - Show the URL on the terminal - Open the browser - Tell the browser where to connect to the server when in liveSave mode.
 # Default: whatever value is set in server.port.
 # The value below was set in /Users/tylerjrichards/.streamlit/config.toml
-serverPort = 8501
+serverPort = 5998
 
 
 [mapbox]
@@ -218,20 +218,29 @@ keyPrefix = ""
 
 # Primary accent color for interactive elements.
 # The value below was set in /Users/tylerjrichards/.streamlit/config.toml
-# primaryColor = "#de8ba1"
+#primaryColor = "#de8ba1"
 
 # Background color for the main content area.
 # The value below was set in /Users/tylerjrichards/.streamlit/config.toml
-# backgroundColor = "#f4f1ea"
+#backgroundColor = "#f4f1ea"
 
 # Background color used for the sidebar and most interactive widgets.
 # The value below was set in /Users/tylerjrichards/.streamlit/config.toml
-# secondaryBackgroundColor = "#9fe4cc"
+#secondaryBackgroundColor = "#9fe4cc"
 
 # Color used for almost all text.
 # The value below was set in /Users/tylerjrichards/.streamlit/config.toml
-# textColor = "#262730"
+#textColor = "#262730"
+
+primaryColor="#FF4b4b"
+backgroundColor="#f1eeee"
+secondaryBackgroundColor="#E1F3E5"
+base="light"
+textColor="#2F0EAA"
+
 
 # Font family for all text in the app, except code blocks. One of "sans serif", "serif", or "monospace".
 # The value below was set in /Users/tylerjrichards/.streamlit/config.toml
-# font = "sans serif"
+font = "sans serif"
+
+
