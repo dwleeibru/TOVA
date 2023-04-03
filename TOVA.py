@@ -34,7 +34,7 @@ if penguin_file is None:
 	st.stop()
 
 ttt2=np.empty((5,3))
-ttt1=['meanRT_Lo_Hi_All','varRT_Lo_Hi_All','commission_Lo_Hi_All','omission_Lo_Hi_All','dprime_Lo_Hi_All']
+ttt1=['varRT_Lo_Hi_All','meanRT_Lo_Hi_All','commission_Lo_Hi_All','omission_Lo_Hi_All','dprime_Lo_Hi_All']
 
 mat=scipy.io.loadmat('TOVA_NCI.mat')
 
