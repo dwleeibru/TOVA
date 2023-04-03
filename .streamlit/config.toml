@@ -152,7 +152,11 @@ gatherUsageStats = true
 # This is used to: - Set the correct URL for CORS and XSRF protection purposes. - Show the URL on the terminal - Open the browser - Tell the browser where to connect to the server when in liveSave mode.
 # Default: whatever value is set in server.port.
 # The value below was set in /Users/tylerjrichards/.streamlit/config.toml
-serverPort = 5998
+<<<<<<< HEAD
+=======
+# original one is 8501
+>>>>>>> d47b2d6b8e096ad1da11ea41d252fd2d018c2308
+serverPort = 8501
 
 
 [mapbox]
