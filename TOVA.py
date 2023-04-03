@@ -13,8 +13,7 @@ penguin_file = st.file_uploader("Note: please select summary file *.iqdat", type
 if penguin_file is not None:
 	kk = pd.read_csv(penguin_file, delimiter='\t')
 	response=AgGrid(kk, height=100)
-
-st.write(penguin_file)
+	st.write(penguin_file)
 
 col1,col2,col3=st.columns((2,1,1))
 
@@ -34,7 +33,7 @@ if penguin_file is None:
 	st.stop()
 
 ttt2=np.empty((5,3))
-ttt1=['meanRT_Lo_Hi_All','varRT_Lo_Hi_All','commission_Lo_Hi_All','omission_Lo_Hi_All','dprime_Lo_Hi_All']
+ttt1=['varRT_Lo_Hi_All','meanRT_Lo_Hi_All','commission_Lo_Hi_All','omission_Lo_Hi_All','dprime_Lo_Hi_All']
 
 mat=scipy.io.loadmat('TOVA_NCI.mat')
 
