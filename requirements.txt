@@ -3,3 +3,4 @@ pandas==1.5.3
 scipy==1.10.1
 streamlit==1.20.0
 XlsxWriter==3.0.9
+streamlit-aggrid
