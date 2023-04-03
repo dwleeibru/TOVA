@@ -10,7 +10,7 @@ ind=['reV','reT','com','omm','dpr']
 st.title("NCI TOVA Converter")
 
 penguin_file = st.file_uploader("Note: please select summary file *.iqdat", type=['iqdat'])
-if penguin_file is not None:
+if penguin_file:
 	kk = pd.read_csv(penguin_file, delimiter='\t')
 	response=AgGrid(kk, height=100)
 	st.write(penguin_file)
