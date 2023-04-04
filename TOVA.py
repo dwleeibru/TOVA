@@ -13,7 +13,7 @@ penguin_file = st.file_uploader("Note: please select summary file *.iqdat", type
 if penguin_file:
 	kk = pd.read_csv(penguin_file, delimiter='\t')
 	response=AgGrid(kk, height=100)
-	st.write(penguin_file)
+#	st.write(penguin_file)
 
 col1,col2,col3=st.columns((2,1,1))
 
