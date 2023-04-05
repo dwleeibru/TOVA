@@ -98,7 +98,7 @@ runOnSave = false
 
 # The port where the server will listen for browser connections.
 # Default: 8501
-port = 8501
+# port = 8501
 
 # The base path for the URL where Streamlit should be served from.
 # Default: ""
@@ -227,3 +227,4 @@ keyPrefix = ""
 
 # Font family for all text in the app, except code blocks. One of "sans serif", "serif", or "monospace".
 # font =
+
