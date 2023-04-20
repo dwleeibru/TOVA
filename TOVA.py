@@ -86,7 +86,7 @@ st.dataframe(df1)
 
 out_path=penguin_file.name[0:-6] + '_Zscore.xlsx'
 
-writer = pd.ExcelWriter(out_path)
+writer = pd.ExcelWriter(out_path,engine="xlsxwriter")
 df1.to_excel(writer,sheet_name="Sheet1",index=True, header=False)
 
 workbook = writer.book
@@ -96,6 +96,6 @@ worksheet.autofit()
 writer.save()
 # writer.close()
 
-# with pd.ExcelWriter(out_path) as writer:
+# with pd.ExcelWriter(out_path,engine="xlsxwriter") as writer:
 # 	df1.to_excel(writer,sheet_name="Sheet1",index=True, header=False)
 # 	writer.save()
