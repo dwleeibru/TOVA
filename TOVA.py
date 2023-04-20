@@ -84,12 +84,15 @@ df1=df1.append(df2)
 st.dataframe(df1)
 
 out_path=penguin_file.name[0:-6] + '_Zscore.xlsx'
-writer = pd.ExcelWriter(out_path,engine='xlsxwriter')
-df1.to_excel(writer,sheet_name="Sheet1",index=True, header=False)
 
-workbook = writer.book
-worksheet = writer.sheets['Sheet1']
-worksheet.autofit()
+# writer = pd.ExcelWriter(out_path,engine='xlsxwriter')
+# df1.to_excel(writer,sheet_name="Sheet1",index=True, header=False)
 
-writer.close()
+# workbook = writer.book
+# worksheet = writer.sheets['Sheet1']
+# worksheet.autofit()
 
+# writer.close()
+
+with pd.ExcelWriter(out_path,engine='xlsxwriter') as writer:
+	df1.to_excel(writer,sheet_name="Sheet1",index=True, header=False)
