@@ -96,3 +96,4 @@ out_path=penguin_file.name[0:-6] + '_Zscore.xlsx'
 
 with pd.ExcelWriter(out_path,engine='xlsxwriter') as writer:
 	df1.to_excel(writer,sheet_name="Sheet1",index=True, header=False)
+	writer.save()
