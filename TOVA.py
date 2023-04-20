@@ -4,9 +4,6 @@ import numpy as np
 from st_aggrid import AgGrid
 import scipy.io
 import xlsxwriter
-import time
-import pyautogui
-from threading import Thread
 
 ind=['reV','reT','com','omm','dpr']
 
