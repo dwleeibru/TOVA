@@ -81,7 +81,7 @@ df2=pd.DataFrame([[ACS, '', '']],columns=['1st half','2nd half','overall'], inde
 
 df1=df1.append(df2)
 
-st.dataframe(df1)
+df1=st.dataframe(df1)
 
 out_path=penguin_file.name[0:-6] + '_Zscore.xlsx'
 writer = pd.ExcelWriter(out_path,engine='xlsxwriter')
