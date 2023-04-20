@@ -4,6 +4,9 @@ import numpy as np
 from st_aggrid import AgGrid
 import scipy.io
 import xlsxwriter
+import time
+import pyautogui
+from threading import Thread
 
 ind=['reV','reT','com','omm','dpr']
 
@@ -13,7 +16,7 @@ penguin_file = st.file_uploader("Note: please select summary file *.iqdat", type
 if penguin_file:
 	kk = pd.read_csv(penguin_file, delimiter='\t')
 	response=AgGrid(kk, height=100)
-#	st.write(penguin_file)
+	#st.write(penguin_file)
 
 col1,col2,col3=st.columns((2,1,1))
 
@@ -93,4 +96,3 @@ worksheet.autofit()
 
 writer.close()
 
-#df1.to_excel(penguin_file.name[0:-6] + '_Zscore.xlsx')
