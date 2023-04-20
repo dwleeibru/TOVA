@@ -92,7 +92,8 @@ workbook = writer.book
 worksheet = writer.sheets['Sheet1']
 worksheet.autofit()
 
-writer.close()
+writer.save()
+# writer.close()
 
 # with pd.ExcelWriter(out_path) as writer:
 # 	df1.to_excel(writer,sheet_name="Sheet1",index=True, header=False)
