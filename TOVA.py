@@ -4,7 +4,6 @@ import numpy as np
 from st_aggrid import AgGrid
 import scipy.io
 import xlsxwriter
-import io
 
 ind=['reV','reT','com','omm','dpr']
 
@@ -58,15 +57,30 @@ for i in range(5):
 
 	tt=[]
 	if i == 0:
-		tt=(kk['expressions.SDHitRT_LF'], kk['expressions.SDHitRT_HF'], kk['expressions.SDHitRT']);		
+		try:
+			tt=(kk['expressions.SDHitRT_LF'], kk['expressions.SDHitRT_HF'], kk['expressions.SDHitRT']);		
+		except:
+			tt=(kk['SDHitRT_LF'], kk['SDHitRT_HF'], kk['SDHitRT']);
 	elif i == 1:
-		tt=(kk['expressions.meanHitRT_LF'], kk['expressions.meanHitRT_HF'], kk['expressions.meanHitRT'])
+		try:
+			tt=(kk['expressions.meanHitRT_LF'], kk['expressions.meanHitRT_HF'], kk['expressions.meanHitRT'])
+		except:
+			tt=(kk['meanHitRT_LF'], kk['meanHitRT_HF'], kk['meanHitRT'])
 	elif i == 2:
-		tt=(kk['expressions.commissionRate_LF'], kk['expressions.commissionRate_HF'], kk['expressions.commissionRate'])
+		try:
+			tt=(kk['expressions.commissionRate_LF'], kk['expressions.commissionRate_HF'], kk['expressions.commissionRate'])
+		except:
+			tt=(kk['commissionRate_LF'], kk['commissionRate_HF'], kk['commissionRate'])
 	elif i == 3:
-		tt=(kk['expressions.omissionsRate_LF'], kk['expressions.omissionsRate_HF'], kk['expressions.omissionsRate'])
+		try:
+			tt=(kk['expressions.omissionsRate_LF'], kk['expressions.omissionsRate_HF'], kk['expressions.omissionsRate'])
+		except:
+			tt=(kk['omissionsRate_LF'], kk['omissionsRate_HF'], kk['omissionsRate'])
 	else:
-		tt=(kk['expressions.dprime_LF'], kk['expressions.dprime_HF'], kk['expressions.dprime'])
+		try:
+			tt=(kk['expressions.dprime_LF'], kk['expressions.dprime_HF'], kk['expressions.dprime'])
+		except:
+			tt=(kk['dprime_LF'], kk['dprime_HF'], kk['dprime'])
     
 	ttt2[i,:] = np.divide(np.diagonal(np.array(tt)-np.take(tmp2,[0,2,4])),np.take(tmp2,[1,3,5]))
 
@@ -86,16 +100,15 @@ st.dataframe(df1)
 
 out_path=penguin_file.name[0:-6] + '_Zscore.xlsx'
 
-writer = pd.ExcelWriter(out_path,engine="xlsxwriter")
+writer = pd.ExcelWriter(out_path,engine='xlsxwriter')
 df1.to_excel(writer,sheet_name="Sheet1",index=True, header=False)
 
 workbook = writer.book
 worksheet = writer.sheets['Sheet1']
 worksheet.autofit()
 
-writer.save()
-# writer.close()
+writer.close()
 
-# with pd.ExcelWriter(out_path,engine="xlsxwriter") as writer:
+# with pd.ExcelWriter(out_path) as writer:
 # 	df1.to_excel(writer,sheet_name="Sheet1",index=True, header=False)
 # 	writer.save()
